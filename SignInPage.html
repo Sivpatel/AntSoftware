@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - ANTSOFT</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh; /* Full height of the page */
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #0a71f8; /* Dark Blue */
+            color: white;
+            padding-top: 20px;
+            height: 100vh; /* Full viewport height */
+            position: fixed; /* Fixed to the left of the screen */
+            top: 0;
+            left: 0;
+            z-index: 1; /* Sidebar stays under the logo */
+        }
+
+        .sidebar a, .pill-button, .dropdown-btn {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 22px; /* Font size for sidebar items */
+            margin: 10px 0; /* Spacing between items */
+            border: none;
+            background-color: #0a71f8; /* Button background */
+            cursor: pointer;
+            border-radius: 50px; /* Rounded pill-style buttons */
+            width: 100%; /* Make buttons fill the sidebar */
+            box-sizing: border-box;
+        }
+
+        .sidebar a:hover, .pill-button:hover, .dropdown-btn:hover {
+            background-color: #00367d; /* Darker blue on hover */
+        }
+
+        /* Dropdown styling */
+        .dropdown-btn {
+            text-align: left;
+        }
+
+        .dropdown-container {
+            display: none;
+            background-color: #0a71f8;
+            padding-left: 20px;
+        }
+
+        .dropdown-container button {
+            color: white;
+            padding: 12px 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 18px;
+            background-color: #0a71f8;
+            border: none;
+            cursor: pointer;
+            border-radius: 50px;
+            width: 100%; /* Make buttons fill the dropdown container */
+        }
+
+        .dropdown-container button:hover {
+            background-color: #00367d;
+        }
+
+        .dropdown-btn.active + .dropdown-container {
+            display: block;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 250px; /* Push content to the right of the sidebar */
+            padding: 20px;
+            background-color: white;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Page Styling */
+        h1 {
+            text-align: center;
+            font-size: 36px;
+        }
+
+        /* Logo Styling for Top-Right */
+        .logo {
+            position: absolute;
+            top: 20px; /* Adjust top position */
+            right: 20px; /* Adjust right position */
+            z-index: 2; /* Ensure the logo is above the sidebar */
+        }
+
+        .logo img {
+            width: 85px; /* Adjust logo size */
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Orders Dropdown -->
+        <button class="dropdown-btn">Dashboard
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <button onclick="window.location.href=IncomingOrders.html">Incoming Orders</button>
+            <button onclick="window.location.href=PickingOrders.html">Picking Orders</button>
+            <button onclick="window.location.href=PackingOrders.html">Packing Orders</button>
+            <button onclick="window.location.href= HistoryData.html">History</button>
+        </div>
+
+        <!-- Other Sidebar Buttons -->
+        <a href="#account">Account</a>
+        <a href="#support">Support</a>
+        <a href="#settings">Settings</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Welcome</h1>
+        <p>Main page.</p>
+    </div>
+
+    <!-- Logo -->
+    <div class="logo">
+        <img src="ANTSOFT.png" alt="Logo" class="rounded-pill">
+    </div>
+
+    <!-- JavaScript for Dropdown functionality -->
+    <script>
+        // Add functionality to toggle dropdown visibility
+        const dropdowns = document.querySelectorAll(".dropdown-btn");
+        dropdowns.forEach((dropdown) => {
+            dropdown.addEventListener("click", function () {
+                this.classList.toggle("active");
+                const dropdownContainer = this.nextElementSibling;
+                if (dropdownContainer.style.display === "block") {
+                    dropdownContainer.style.display = "none";
+                } else {
+                    dropdownContainer.style.display = "block";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
