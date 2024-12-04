@@ -2,6 +2,36 @@
     padding: 0;
     margin: 0;
 }
+/* Reset basic styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header styles */
+  header {
+    position: fixed; /* Keeps it always at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #f8f9fa; /* Light background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  /* Logo styles */
+  .logo img {
+    height: 50px; /* Adjust logo size */
+    width: auto;  /* Maintain aspect ratio */
+  }
+  
+  .logo {
+    display: inline-block;
+    text-decoration: none;
+  }
 
 *{
 	-webkit-box-sizing:border-box;
@@ -210,7 +240,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
     max-width: 735px;
     margin: 0 auto;
 }
-.welcome-btn {
+
+.welcome-btn.model-search-btn{
     display: inline-block;
     width: 230px;
     height: 60px;
@@ -224,10 +255,10 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
     -o-transition:.3s linear;
     transition: .3s linear;
 }
-.welcome-btn:hover{
+.welcome-btn:howelcome-btnver{
     background: #0102fa;
 }
-/*.welcome-hero-txt*/
+/*.welcome-homebtn-txt*/
 
 /*-------------------------------------
         4. Model-Search
@@ -680,4 +711,47 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
 @keyframes example {
     0%   {bottom:0px;}
     100%  {bottom:7px;}
+}
+.welcome-homebtn.model-search-btn{
+    display: inline-block;
+    width: 230px;
+    height: 60px;
+    background: #4e4ffa;
+    color: #fff;
+    border-radius: 3px;
+    margin-top: 55px;
+    -webkit-transition: .3s linear; 
+    -moz-transition:.3s linear; 
+    -ms-transition:.3s linear; 
+    -o-transition:.3s linear;
+    transition: .3s linear;
+}
+.welcome-homebtn:howelcome-btnver{
+    background: #0102fa;
+}
+.welcome-homebtn.new-cars-btn {
+    width: 176px;
+    margin-top: 32px;
+}
+.welcome-homebtn.model-search-btn {
+    width: 160px;
+    margin-top: 80px;
+    margin-left: 53px;
+}
+/*.welcome-signup-txt 290x372*/
+.welcome-signup-txt{text-align: center;padding:70px 0 172px;}
+.welcome-signup-txt h2 {
+    font-size: 42px;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+}
+.welcome-signup-txt p {
+    font-size: 18px;
+    text-transform: initial;
+    color: #ffffff;
+    font-weight: 500;
+    max-width: 335px;
+    margin: 0 auto;
 }
